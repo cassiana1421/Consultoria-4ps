@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultoria Pro | Jornada & 4Ps</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-conteudo">
+            <div class="logo">Consultoria<span>Pro</span></div>
+            <ul class="menu-links">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#jornada">Jornada</a></li>
+                <li><a href="#mapeamento">Mapeamento 4Ps</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero">
+        <div class="container">
+            <span class="tag-destaque">Sistema Padronizado</span>
+            <h1>Gestão de Consultoria Ágil e Sem Retrabalho</h1>
+            <p>Acompanhe a jornada do cliente ao vivo e defina os 4Ps de Marketing com precisão.</p>
+            <div class="hero-botoes">
+                <a href="#jornada" class="btn-primario">Ver Jornada</a>
+                <a href="#mapeamento" class="btn-secundario">Preencher 4Ps</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section id="jornada" class="card-secao">
+            <div class="titulo-secao">
+                <h2>1. Painel Interativo da Jornada (Clique nos cartões)</h2>
+                <span id="texto-progresso" class="badge-status">Progresso: 50%</span>
+            </div>
+            
+            <div class="barra-progresso-fundo">
+                <div id="barra-progresso" class="barra-progresso-preenchimento"></div>
+            </div>
+
+            <div class="grade-etapas">
+                <div class="etapa concluida" onclick="mudarStatus(this)">
+                    <span class="etapa-numero">Etapa 01</span>
+                    <h3>Diagnóstico Inicial</h3>
+                    <p>Levantamento de dores e metas do cliente.</p>
+                    <span class="status-texto">✔ Concluído</span>
+                </div>
+
+                <div class="etapa concluida" onclick="mudarStatus(this)">
+                    <span class="etapa-numero">Etapa 02</span>
+                    <h3>Mapeamento 4Ps</h3>
+                    <p>Análise de Produto, Preço, Praça e Promoção.</p>
+                    <span class="status-texto">✔ Concluído</span>
+                </div>
+
+                <div class="etapa pendente" onclick="mudarStatus(this)">
+                    <span class="etapa-numero">Etapa 03</span>
+                    <h3>Plano de Ação</h3>
+                    <p>Definição de cronograma e entregas.</p>
+                    <span class="status-texto">⏳ Pendente (Clique aqui)</span>
+                </div>
+
+                <div class="etapa pendente" onclick="mudarStatus(this)">
+                    <span class="etapa-numero">Etapa 04</span>
+                    <h3>Relatório Final</h3>
+                    <p>Validação dos resultados com o cliente.</p>
+                    <span class="status-texto">⏳ Pendente (Clique aqui)</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="mapeamento" class="card-secao">
+            <div class="titulo-secao">
+                <h2>2. Mapeamento Estratégico dos 4Ps</h2>
+                <button type="button" class="btn-primario" onclick="gerarRelatorio()">Gerar Relatório na Tela</button>
+            </div>
+
+            <div class="grade-4ps">
+                <div class="bloco-p borda-azul">
+                    <h3>P1. Produto</h3>
+                    <label>Qual é o produto e seu diferencial?</label>
+                    <input type="text" id="prod" placeholder="Ex: Pastel artesanal recheado na hora">
+                    <label>Qual é o público de mercado?</label>
+                    <input type="text" id="pub" placeholder="Ex: Famílias e trabalhadores do bairro">
+                </div>
+
+                <div class="bloco-p borda-verde">
+                    <h3>P2. Preço</h3>
+                    <label>Qual a faixa de preço e valor?</label>
+                    <input type="text" id="prec" placeholder="Ex: R$ 12,00 a R$ 22,00 (preço acessível)">
+                    <label>Formas de pagamento:</label>
+                    <input type="text" id="pag" placeholder="Ex: Pix, cartão e vale-refeição">
+                </div>
+
+                <div class="bloco-p borda-laranja">
+                    <h3>P3. Praça</h3>
+                    <label>Onde encontrar o produto?</label>
+                    <input type="text" id="prac" placeholder="Ex: Loja física no centro e iFood">
+                    <label>Como funciona a entrega?</label>
+                    <input type="text" id="ent" placeholder="Ex: Balcão ou delivery em até 35 min">
+                </div>
+
+                <div class="bloco-p borda-roxa">
+                    <h3>P4. Promoção</h3>
+                    <label>Como divulgar o negócio?</label>
+                    <input type="text" id="prom" placeholder="Ex: Instagram, WhatsApp e panfletos">
+                    <label>Qual o melhor momento para promover?</label>
+                    <input type="text" id="mom" placeholder="Ex: Finais de semana e horário de almoço">
+                </div>
+            </div>
+
+            <div id="box-relatorio" class="caixa-relatorio">
+                <h3>📋 Relatório Executivo Gerado:</h3>
+                <div id="texto-relatorio"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2026 ConsultoriaPro - Sistema de Gestão Estratégica</p>
+    </footer>
+
+    <script>
+        function mudarStatus(card) {
+            const label = card.querySelector('.status-texto');
+            if (card.classList.contains('concluida')) {
+                card.classList.remove('concluida');
+                card.classList.add('pendente');
+                label.innerText = '⏳ Pendente (Clique aqui)';
+            } else {
+                card.classList.remove('pendente');
+                card.classList.add('concluida');
+                label.innerText = '✔ Concluído';
+            }
+            const total = document.querySelectorAll('.etapa').length;
+            const feitas = document.querySelectorAll('.etapa.concluida').length;
+            const pct = Math.round((feitas / total) * 100);
+            document.getElementById('barra-progresso').style.width = pct + '%';
+            document.getElementById('texto-progresso').innerText = 'Progresso: ' + pct + '%';
+        }
+
+        function gerarRelatorio() {
+            const p1 = document.getElementById('prod').value || 'Não preenchido';
+            const pub = document.getElementById('pub').value || 'Não preenchido';
+            const p2 = document.getElementById('prec').value || 'Não preenchido';
+            const pag = document.getElementById('pag').value || 'Não preenchido';
+            const p3 = document.getElementById('prac').value || 'Não preenchido';
+            const ent = document.getElementById('ent').value || 'Não preenchido';
+            const p4 = document.getElementById('prom').value || 'Não preenchido';
+            const mom = document.getElementById('mom').value || 'Não preenchido';
+
+            document.getElementById('texto-relatorio').innerHTML = `
+                <p><strong>1. Produto:</strong> ${p1} | <strong>Público:</strong> ${pub}</p>
+                <p><strong>2. Preço:</strong> ${p2} | <strong>Pagamento:</strong> ${pag}</p>
+                <p><strong>3. Praça:</strong> ${p3} | <strong>Entrega:</strong> ${ent}</p>
+                <p><strong>4. Promoção:</strong> ${p4} | <strong>Melhor Momento:</strong> ${mom}</p>
+            `;
+            document.getElementById('box-relatorio').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
