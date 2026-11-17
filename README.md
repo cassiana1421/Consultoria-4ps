@@ -14,9 +14,9 @@ Basta abrir o arquivo `index.html` no navegador (ou rodar com o Live Server no V
 
 ## 🎓 Sobre o Projeto e Orientação
 
-Este projeto foi desenvolvido como atividade acadêmica na Universidade Positivo (UP) sob a orientação e assessoria do **Professor Sedenilso.
+Este projeto foi desenvolvido como atividade acadêmica na Universidade Positivo (UP) sob a orientação e assessoria do Professor Sedenilso.
 
-* **Desenvolvido por:** Cassiana De Paula Neves Damazio
-* Orientação:** Prof. Sedenilso Antonio Machado
+Desenvolvido por:Cassiana De Paula Neves Damazio
+Orientação:Prof. Sedenilso Antonio Machado
 
                       
