@@ -12,5 +12,11 @@ Este projeto é uma aplicação web criada para organizar e padronizar o trabalh
 
 Basta abrir o arquivo `index.html` no navegador (ou rodar com o Live Server no VS Code).
 
+## 🎓 Sobre o Projeto e Orientação
 
-                        Trabalho desenvolvido por Cassiana de Paula Neves Damazio.
+Este projeto foi desenvolvido como atividade acadêmica na Universidade Positivo (UP) sob a orientação e assessoria do **Professor Sedenilso.
+
+* **Desenvolvido por:** Cassiana De Paula Neves Damazio
+* Orientação:** Prof. Sedenilso Antonio Machado
+
+                      
